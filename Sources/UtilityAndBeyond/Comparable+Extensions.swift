@@ -1,4 +1,4 @@
-public extension Comparable {
+extension Comparable {
     // ie: 5.clamped(to: 7...10)
     // ie: 5.0.clamped(to: 7.0...10.0)
     // ie: "a".clamped(to: "b"..."h")

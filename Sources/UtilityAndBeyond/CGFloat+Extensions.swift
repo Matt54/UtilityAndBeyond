@@ -1,6 +1,6 @@
 import SwiftUI
 
-public extension CGFloat {
+extension CGFloat {
     /// Map the value to a new range
     /// Return a value on [from.lowerBound,from.upperBound] to a [to.lowerBound, to.upperBound] range
     ///
