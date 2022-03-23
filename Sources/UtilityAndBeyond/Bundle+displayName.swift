@@ -1,6 +1,6 @@
 import Foundation
 
-extension Bundle {
+public extension Bundle {
     // Name of the app - title under the icon.
     var displayName: String? {
             return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
