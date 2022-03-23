@@ -1,13 +1,13 @@
 import SwiftUI
 
-extension CGFloat {
+public extension CGFloat {
     /// Map the value to a new range
     /// Return a value on [from.lowerBound,from.upperBound] to a [to.lowerBound, to.upperBound] range
     ///
     /// - Parameters:
     ///   - from source: Current range (Default: 0...1.0)
     ///   - to target: Desired range (Default: 0...1.0)
-    public func mapped(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
+    func mapped(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
         return ((self - source.lowerBound) / (source.upperBound - source.lowerBound)) * (target.upperBound - target.lowerBound) + target.lowerBound
     }
     
@@ -17,7 +17,7 @@ extension CGFloat {
     /// - Parameters:
     ///   - from source: Current range (Default: 0...1.0)
     ///   - to target: Desired range (Default: 0...1.0)
-    public func mappedLog10(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
+    func mappedLog10(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
         let logN = log10(self)
         let logStart1 = log10(source.lowerBound)
         let logStop1 = log10(source.upperBound)
@@ -35,7 +35,7 @@ extension CGFloat {
     /// - Parameters:
     ///   - from source: Current range (Default: 0...1.0)
     ///   - to target: Desired range (Default: 0...1.0)
-    public func mappedExp(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
+    func mappedExp(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
         let logStart2 = log(target.lowerBound)
         let logStop2 = log(target.upperBound)
         let scale = (logStop2 - logStart2) / (source.upperBound - source.lowerBound)
