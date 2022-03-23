@@ -7,7 +7,7 @@ public extension CGFloat {
     /// - Parameters:
     ///   - from source: Current range (Default: 0...1.0)
     ///   - to target: Desired range (Default: 0...1.0)
-    func mapped(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
+    public func mapped(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
         return ((self - source.lowerBound) / (source.upperBound - source.lowerBound)) * (target.upperBound - target.lowerBound) + target.lowerBound
     }
     
@@ -17,7 +17,7 @@ public extension CGFloat {
     /// - Parameters:
     ///   - from source: Current range (Default: 0...1.0)
     ///   - to target: Desired range (Default: 0...1.0)
-    func mappedLog10(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
+    public func mappedLog10(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
         let logN = log10(self)
         let logStart1 = log10(source.lowerBound)
         let logStop1 = log10(source.upperBound)
@@ -35,7 +35,7 @@ public extension CGFloat {
     /// - Parameters:
     ///   - from source: Current range (Default: 0...1.0)
     ///   - to target: Desired range (Default: 0...1.0)
-    func mappedExp(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
+    public func mappedExp(from source: ClosedRange<CGFloat> = 0...1.0, to target: ClosedRange<CGFloat> = 0...1.0) -> CGFloat {
         let logStart2 = log(target.lowerBound)
         let logStop2 = log(target.upperBound)
         let scale = (logStop2 - logStart2) / (source.upperBound - source.lowerBound)

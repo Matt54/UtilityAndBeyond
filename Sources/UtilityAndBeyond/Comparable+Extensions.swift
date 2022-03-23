@@ -4,7 +4,7 @@ public extension Comparable {
     // ie: "a".clamped(to: "b"..."h")
     /// **OTCore:**
     /// Returns the value clamped to the passed range.
-    func clamped(to limits: ClosedRange<Self>) -> Self {
+    public func clamped(to limits: ClosedRange<Self>) -> Self {
         min(max(self, limits.lowerBound), limits.upperBound)
     }
 }
