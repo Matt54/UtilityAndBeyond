@@ -64,7 +64,7 @@ public extension Array {
         // count is 5 -> half count is 2 -> hits all [2, 1, 3, 0, 4]
         // count is 6 -> half count is 3 -> hits all [3, 2, 4, 1, 5, 0]
         for i in 1...halfCount {
-            if halfCount-i > 0 {
+            if halfCount-i >= 0 {
                 divergeElements.append(self[halfCount-i])
             }
             if halfCount+i < self.count {
