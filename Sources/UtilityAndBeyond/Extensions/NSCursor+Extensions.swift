@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if os(OSX)
 public extension NSCursor {
     static func handleButtonHoverChange(isHovering: Bool) {
         isHovering ? pointingHand.push() : pop()
@@ -16,3 +17,4 @@ public extension NSCursor {
         isHovering ? dragLink.push() : pop()
     }
 }
+#endif

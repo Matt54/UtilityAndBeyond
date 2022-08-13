@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if os(OSX)
 public extension View {
     private func newWindowInternal(title: String, geometry: NSRect, style: NSWindow.StyleMask, delegate: NSWindowDelegate, windowEscape: ((NSWindow) -> Void)? = nil) -> NSWindow {
         let window = NSWindow(
@@ -33,3 +34,4 @@ public extension View {
         newWindowInternal(title: title, geometry: geometry, style: style, delegate: delegate, windowEscape: windowEscape).contentView = NSHostingView(rootView: self)
     }
 }
+#endif
