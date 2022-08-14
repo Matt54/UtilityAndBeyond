@@ -1,12 +1,6 @@
-//
-//  View+NewWindow.swift
-//  
-//
-//  Created by Matt Pfeiffer on 8/13/22.
-//
-
 import SwiftUI
 
+// MARK: View+NewWindow
 #if os(OSX)
 public extension View {
     private func newWindowInternal(title: String, geometry: NSRect, style: NSWindow.StyleMask, delegate: NSWindowDelegate, windowEscape: ((NSWindow) -> Void)? = nil) -> NSWindow {
