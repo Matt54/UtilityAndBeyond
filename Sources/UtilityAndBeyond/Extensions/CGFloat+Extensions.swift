@@ -1,6 +1,21 @@
 import SwiftUI
 
 public extension CGFloat {
+    /// Used to convert base metric value to shortest representation
+    func toShortMetricText() -> String {
+        let units = ["", "m", "µ", "n", "p", "f"]
+        
+        var value = self
+        var unitIndex = 0
+        
+        while abs(value) < 1.0 && abs(value) > 0 && unitIndex < units.count - 1 {
+            value *= 1000.0
+            unitIndex += 1
+        }
+        
+        return String(format: "%.0f%@s", value, units[unitIndex])
+    }
+    
     /// Map the value to a new range
     /// Return a value on [from.lowerBound,from.upperBound] to a [to.lowerBound, to.upperBound] range
     ///
