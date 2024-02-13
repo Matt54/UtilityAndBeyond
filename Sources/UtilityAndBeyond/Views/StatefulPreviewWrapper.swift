@@ -8,16 +8,16 @@
 import SwiftUI
 
 // Allows for conveniently test views with bindings for changes
-struct StatefulPreviewWrapper<Value, Content: View>: View {
+public struct StatefulPreviewWrapper<Value, Content: View>: View {
     @State var value: Value
     let content: (Binding<Value>) -> Content
 
-    init(_ value: Value, content: @escaping (Binding<Value>) -> Content) {
+    public init(_ value: Value, content: @escaping (Binding<Value>) -> Content) {
         _value = State(initialValue: value)
         self.content = content
     }
 
-    var body: some View {
+    public var body: some View {
         content($value)
     }
 }
