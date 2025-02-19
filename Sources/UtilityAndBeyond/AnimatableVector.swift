@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: AnimatableVector
 public struct AnimatableVector: VectorArithmetic {
     
-    var values: [Double] // vector values
+    public var values: [Double] // vector values
     
     public init(count: Int = 1) {
         self.values = [Double](repeating: 0.0, count: count)
